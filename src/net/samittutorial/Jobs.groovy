@@ -77,7 +77,7 @@ class Jobs {
             </flow-definition>
         """.stripIndent()
         
-        if(!pipeline.Jenkins.getInstance().getItem(jobName)) {
+        if(!Jenkins.getInstance().getItem(jobName)) {
             def templatedSerializeXml = new XmlUtil().serialize(
                 new XmlParser().parseText(jobTemplateText)
                 )
@@ -88,7 +88,7 @@ class Jobs {
                     .bindNode(finalXml)
                     .toString()
                     .getBytes()
-            pipeline.Jenkins.getInstance().createProjectFromXML(jobName, new ByteArrayInputStream(configBytes))
+            Jenkins.getInstance().createProjectFromXML(jobName, new ByteArrayInputStream(configBytes))
             
             pipeline.println "Pipeline ${jobName} created!"
         } else {
