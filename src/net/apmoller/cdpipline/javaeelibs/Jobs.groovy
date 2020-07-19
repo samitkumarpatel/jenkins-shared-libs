@@ -11,7 +11,7 @@ class Jobs {
         this.pipeline=pipeline
     }
 
-    def createJob(name) {
+    def createJob(jobName) {
         
         def configXMLTemplate = """
             <flow-definition plugin="workflow-job@2.26">
@@ -97,7 +97,7 @@ class Jobs {
     }
 
     def triggerJob(jobName, parameter) {
-        return pipeline.build job: jobName,parameters: [
+        return pipeline.build job: jobName, parameters: [
                   string(name: 'inventory_branch', value: parameter.inventory_branch),
                   string(name: 'deploy_tag', value: parameter.deploy_tag),
                   string(name: 'deploy_env', value: parameter.deploy_env),
