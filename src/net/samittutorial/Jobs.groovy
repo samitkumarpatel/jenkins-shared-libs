@@ -62,7 +62,7 @@ class Jobs {
                     </userRemoteConfigs>
                     <branches>
                         <hudson.plugins.git.BranchSpec>
-                            <name>$inventory_branch</name>
+                            <name>\$inventory_branch</name>
                         </hudson.plugins.git.BranchSpec>
                     </branches>
                     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
