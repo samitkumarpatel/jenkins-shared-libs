@@ -35,8 +35,7 @@ class Utility implements Serializable {
         ERROR:
         ${msg}
 
-        If you are unsure what this error means, please check the User Guide and FAQs below
-        https://${confluence}/display/LCS/javaee+pipeline+faq
+        If you are unsure what this error means, please check the User Wiki and FAQs below
 
         Stack trace : ${code}
         ***********************************************************************************
