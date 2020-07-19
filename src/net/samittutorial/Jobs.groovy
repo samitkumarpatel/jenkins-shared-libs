@@ -97,12 +97,12 @@ class Jobs {
     }
 
     def triggerJob(jobName, parameter) {
-        return pipeline.build job: jobName, parameters: [
-                  string(name: 'inventory_branch', value: parameter.inventory_branch),
-                  string(name: 'deploy_tag', value: parameter.deploy_tag),
-                  string(name: 'deploy_env', value: parameter.deploy_env),
-                  bool(name: 'debug', value: parameter.debug)
-              ], propagate: false, wait: true, quietPeriod: 5
+        return pipeline.build(job: jobName, parameters: [
+                  pipeline.string(name: 'inventory_branch', value: parameter.inventory_branch),
+                  pipeline.string(name: 'deploy_tag', value: parameter.deploy_tag),
+                  pipeline.string(name: 'deploy_env', value: parameter.deploy_env),
+                  pipeline.bool(name: 'debug', value: parameter.debug)
+              ], propagate: false, wait: true, quietPeriod: 5)
     }
 
     def jobStatus(jobReference) {

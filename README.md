@@ -1,4 +1,4 @@
-## Java EE Jenkins Shared Library
+## Jenkins Shared Library
  
 - This repo contains the shared libraries for running a Jenkins pipeline.
 - The libraries are written in Groovy and should follow the standard practices of the language. For further details on the syntax and standards, use the following http://groovy-lang.org/syntax.html.
