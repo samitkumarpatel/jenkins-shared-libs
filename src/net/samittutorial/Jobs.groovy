@@ -106,6 +106,6 @@ class Jobs {
     }
 
     def jobStatus(jobReference) {
-        jobReference.getResult()
+        pipeline.println jobReference.getResult()
     }
 }
