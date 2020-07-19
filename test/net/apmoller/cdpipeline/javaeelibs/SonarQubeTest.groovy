@@ -23,7 +23,7 @@ class SonarQubeTest extends Specification {
                  "id": "AXA_cc9Bo9LaNp2OCLsP",
                  "type": "REPORT",
                  "componentId": "AW6ucHAmo9LaNp2OCER7",
-                 "componentKey": "net.apmoller.cdpipeline:hello-world-ee",
+                 "componentKey": "net.samittutorial:hello-world-ee",
                  "componentName": "hello-world-ee",
                  "componentQualifier": "TRK",
                  "analysisId": "AXA_cdbv-J62WRGsQWG-",
@@ -47,7 +47,7 @@ class SonarQubeTest extends Specification {
                  "id": "AXA_cc9Bo9LaNp2OCLsP",
                  "type": "REPORT",
                  "componentId": "AW6ucHAmo9LaNp2OCER7",
-                 "componentKey": "net.apmoller.cdpipeline:hello-world-ee",
+                 "componentKey": "net.samittutorial:hello-world-ee",
                  "componentName": "hello-world-ee",
                  "componentQualifier": "TRK",
                  "analysisId": "AXA_cdbv-J62WRGsQWG-",
@@ -172,10 +172,10 @@ class SonarQubeTest extends Specification {
         and:
         wrapper.fileExists(_) >> true
         wrapper.readFile(_) >> """
-            projectKey=net.apmoller.cdpipeline:hello-world-ee
+            projectKey=net.samittutorial:hello-world-ee
             serverUrl=https://localhost:9000
             serverVersion=7.5.0.20543
-            dashboardUrl=https://localhost:9000/dashboard?id=net.apmoller.cdpipeline%3Ahello-world-ee
+            dashboardUrl=https://localhost:9000/dashboard?id=net.samittutorial%3Ahello-world-ee
             ceTaskId=AXA_cc9Bo9LaNp2OCLsP
             ceTaskUrl=https://localhost:9000/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP
         """
@@ -196,10 +196,10 @@ class SonarQubeTest extends Specification {
         and:
         wrapper.fileExists(_) >> true
         wrapper.readFile(_) >> """
-            projectKey=net.apmoller.cdpipeline:hello-world-ee
+            projectKey=net.samittutorial:hello-world-ee
             serverUrl=https://localhost:9000
             serverVersion=7.5.0.20543
-            dashboardUrl=https://localhost:9000/dashboard?id=net.apmoller.cdpipeline%3Ahello-world-ee
+            dashboardUrl=https://localhost:9000/dashboard?id=net.samittutorial%3Ahello-world-ee
             ceTaskId=AXA_cc9Bo9LaNp2OCLsP
             ceTaskUrl=https://localhost:9000/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP
         """
@@ -220,10 +220,10 @@ class SonarQubeTest extends Specification {
         and:
         wrapper.fileExists(_) >> true
         wrapper.readFile(_) >> """
-            projectKey=net.apmoller.cdpipeline:hello-world-ee
+            projectKey=net.samittutorial:hello-world-ee
             serverUrl=https://localhost:9000
             serverVersion=7.5.0.20543
-            dashboardUrl=https://localhost:9000/dashboard?id=net.apmoller.cdpipeline%3Ahello-world-ee
+            dashboardUrl=https://localhost:9000/dashboard?id=net.samittutorial%3Ahello-world-ee
             ceTaskId=AXA_cc9Bo9LaNp2OCLsP
             ceTaskUrl=https://localhost:9000/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP
         """
@@ -244,10 +244,10 @@ class SonarQubeTest extends Specification {
         and:
         wrapper.fileExists(_) >> true
         wrapper.readFile(_) >> """
-            projectKey=net.apmoller.cdpipeline:hello-world-ee
+            projectKey=net.samittutorial:hello-world-ee
             serverUrl=https://localhost:9000
             serverVersion=7.5.0.20543
-            dashboardUrl=https://localhost:9000/dashboard?id=net.apmoller.cdpipeline%3Ahello-world-ee
+            dashboardUrl=https://localhost:9000/dashboard?id=net.samittutorial%3Ahello-world-ee
             ceTaskId=AXA_cc9Bo9LaNp2OCLsP
             ceTaskUrl=https://localhost:9000/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP
         """
