@@ -79,7 +79,7 @@ class Jobs {
         
         if(!Jenkins.getInstance().getItem(jobName)) {
             def templatedSerializeXml = new XmlUtil().serialize(
-                new XmlParser().parseText(jobTemplateText)
+                new XmlParser().parseText(configXMLTemplate)
                 )
             
             def finalXml = new XmlSlurper().parseText(templatedSerializeXml)
