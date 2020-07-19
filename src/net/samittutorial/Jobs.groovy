@@ -101,7 +101,7 @@ class Jobs {
                   pipeline.string(name: 'inventory_branch', value: parameter.inventory_branch),
                   pipeline.string(name: 'deploy_tag', value: parameter.deploy_tag),
                   pipeline.string(name: 'deploy_env', value: parameter.deploy_env),
-                  pipeline.bool(name: 'debug', value: parameter.debug)
+                  pipeline.booleanParam(name: 'debug', value: parameter.debug)
               ], propagate: false, wait: true, quietPeriod: 5)
     }
 
