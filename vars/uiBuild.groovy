@@ -1,4 +1,4 @@
-import net.apmoller.cdpipline.javaeelibs.Git
+import net.samittutorial.Git
 
 /**
  *
@@ -35,8 +35,8 @@ def call(body={}) {
                         cache=${env.WORKSPACE}/npmcache
                         strict-ssl=false
                         always-auth=true
-                        email=nexuswriter@maersk.com
-                        registry=https://tools-nexus.maerskdev.net/repository/npm-group-internal
+                        email=admin@samittutorial.net
+                        registry=https://localhost:9001/repository/npm-group-internal
                         _auth=${base64Token}
                         scripts-prepend-node-path=true
                         HOME=${env.WORKSPACE}
@@ -51,7 +51,7 @@ def call(body={}) {
                     writeFile file:"${env.WORKSPACE}/.bowerrc", text: bowerrc
                 }
             }
-            docker.image("docker.maerskdev.net/devops/spa349/nodejs-grunt-bower-alpine:7.4.0-alpine-01").inside("-w ${env.WORKSPACE}") {
+            docker.image("samitkumarpatel/nodejs-grunt-bower-alpine:7.4.0-alpine-01").inside("-w ${env.WORKSPACE}") {
 
                 stage('sonarqube') {
                     println("//TODO")
@@ -72,7 +72,7 @@ def call(body={}) {
                 }
                 stage('publish') {
                     sh """
-                      npm publish $WORKSPACE/web --registry https://tools-nexus.maerskdev.net/repository/npm-hosted-internal/${pipelineParams.projectname}
+                      npm publish $WORKSPACE/web --registry https://localhost:9001/repository/npm-hosted-internal/${pipelineParams.projectname}
                     """
                 }
             }

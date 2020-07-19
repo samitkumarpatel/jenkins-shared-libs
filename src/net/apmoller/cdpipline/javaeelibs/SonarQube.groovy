@@ -1,10 +1,10 @@
-package net.apmoller.cdpipline.javaeelibs
+package net.samittutorial
 
 class SonarQube implements Serializable {
 
     Utility pipeline
     Maven maven
-    def sonarqubeUrl="https://sonar.maerskdev.net"
+    def sonarqubeUrl="https://localhost:9000"
     def sonarqubeMavenPlugins="org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar"
 
     SonarQube(Utility pipeline,Maven maven) {

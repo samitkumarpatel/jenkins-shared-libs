@@ -1,4 +1,4 @@
-package net.apmoller.cdpipline.javaeelibs
+package net.samittutorial
 
 enum ExecutionEnv {
     DOCKER,JENKINS,OTHER

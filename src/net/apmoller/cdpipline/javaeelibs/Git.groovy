@@ -1,11 +1,11 @@
-package net.apmoller.cdpipline.javaeelibs
+package net.samittutorial
 
 class Git implements Serializable {
     private static final String GIT_TOOL_NAME="git_2_x"
-    public static final String BITBUCKET_HTTPS_URL ="https://git.maerskdev.net/scm"
+    public static final String BITBUCKET_HTTPS_URL ="https://bitbucket.org/scm"
     def pipeline, username, email, credentialId
 
-    Git(jenkins,name="rest_user",email="service-account@maerskdev.net",credentialId="mdev_bb_token"){
+    Git(jenkins,name="rest_user",email="service-account@samittutorial.net",credentialId="bb_token"){
         this.pipeline=jenkins
         this.username=name
         this.email=email

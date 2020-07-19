@@ -1,7 +1,7 @@
-import net.apmoller.cdpipline.javaeelibs.Utility
-import net.apmoller.cdpipline.javaeelibs.Maven
-import net.apmoller.cdpipline.javaeelibs.Git
-import net.apmoller.cdpipline.javaeelibs.SonarQube
+import net.samittutorial.Utility
+import net.samittutorial.Maven
+import net.samittutorial.Git
+import net.samittutorial.SonarQube
 
 def call(body={}) {
     def pipelineParams = [:]

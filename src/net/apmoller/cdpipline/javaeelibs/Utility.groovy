@@ -1,5 +1,4 @@
-package net.apmoller.cdpipline.javaeelibs
-
+package net.samittutorial
 
 import groovy.json.*
 
@@ -30,7 +29,7 @@ class Utility implements Serializable {
     def readMavenPom(_path) { pipeline.readMavenPom file:_path}
     def writeFile(file,text) { pipeline.writeFile file: file, text: text }
     def customError(msg,code) {
-        def confluence = "confluence.maerskdev.net"
+        def confluence = "samittutorial.net"
         def errorMessage = """\
         ***********************************************************************************
         ERROR:

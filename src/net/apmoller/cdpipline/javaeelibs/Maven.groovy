@@ -1,17 +1,11 @@
-package net.apmoller.cdpipline.javaeelibs
-
-/**
- * This is class is maven based wrapper , which does mvn related activity with all necessary mvn args
- *
- * @author spa349
- */
+package net.samittutorial
 
 class Maven implements Serializable {
 
     Utility pipeline
     ExecutionEnv executionEnv = ExecutionEnv.DOCKER
     List mvnArgs
-    def mavenDockerImage='docker.maerskdev.net/maven:3-alpine'
+    def mavenDockerImage='maven:3-alpine'
     def mavenToolName="maven_3_6_2"
     def mavenPath="mvn"
 
@@ -62,7 +56,7 @@ class Maven implements Serializable {
     private def placeMvnConfig() {
         def securitySettingsDotXml = """
             <settingsSecurity>
-              <master>{sjc9N6R1cKQHa2cCLnuoSZPZ6ajpR+nUDHdJAsMqQsM=}</master>
+              <master>MASTER_TOKEN</master>
             </settingsSecurity>
         """.stripIndent()
 
@@ -72,37 +66,17 @@ class Maven implements Serializable {
                       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
                 <mirrors>
                     <mirror>
-                        <id>devops-nexus</id>
+                        <id>REPO_ID</id>
                         <mirrorOf>*</mirrorOf>
                         <name>Main mirror for all devops managed repositories</name>
-                        <url>https://tools-nexus.maerskdev.net/repository/maven-group-public/</url>
+                        <url>MIRROR_URL</url>
                     </mirror>
                 </mirrors>
                 <servers>
                     <server>
-                        <id>net.apmoller.crb.devops.snapshots</id>
-                        <username>nexuswriter</username>
-                        <password>{pXUMJvvm8SQHgSUHwK4irmd4bKEIsaaN4GYBAKzU//CwBj0sRNjCPuGZkO+sqSfz}</password>
-                    </server>
-                    <server>
-                        <id>net.apmoller.crb.devops.releases</id>
-                        <username>nexuswriter</username>
-                        <password>{pXUMJvvm8SQHgSUHwK4irmd4bKEIsaaN4GYBAKzU//CwBj0sRNjCPuGZkO+sqSfz}</password>
-                    </server>
-                    <server>
-                        <id>devops-nexus</id>
-                        <username>nexuswriter</username>
-                        <password>{pXUMJvvm8SQHgSUHwK4irmd4bKEIsaaN4GYBAKzU//CwBj0sRNjCPuGZkO+sqSfz}</password>
-                    </server>
-                    <server>
-                        <id>net.maerskdev.cdpipeline.releases</id>
-                        <username>nexuswriter</username>
-                        <password>{pXUMJvvm8SQHgSUHwK4irmd4bKEIsaaN4GYBAKzU//CwBj0sRNjCPuGZkO+sqSfz}</password>
-                    </server>
-                    <server>
-                        <id>net.maerskdev.cdpipeline.snapshots</id>
-                        <username>nexuswriter</username>
-                        <password>{pXUMJvvm8SQHgSUHwK4irmd4bKEIsaaN4GYBAKzU//CwBj0sRNjCPuGZkO+sqSfz}</password>
+                        <id>REPO_ID</id>
+                        <username>USERNAME</username>
+                        <password>PASSWORD</password>
                     </server>
                 </servers>
             </settings>

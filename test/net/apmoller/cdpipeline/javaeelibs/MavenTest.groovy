@@ -1,8 +1,8 @@
-package net.apmoller.cdpipeline.javaeelibs
+package net.samittutorial
 
-import net.apmoller.cdpipline.javaeelibs.ExecutionEnv
-import net.apmoller.cdpipline.javaeelibs.Maven
-import net.apmoller.cdpipline.javaeelibs.Utility
+import net.samittutorial.ExecutionEnv
+import net.samittutorial.Maven
+import net.samittutorial.Utility
 import spock.lang.Specification
 
 class MavenTest extends Specification {

@@ -1,10 +1,10 @@
-package net.apmoller.cdpipeline.javaeelibs
+package net.samittutorial
 
 import groovy.json.JsonSlurper
-import net.apmoller.cdpipline.javaeelibs.ExecutionEnv
-import net.apmoller.cdpipline.javaeelibs.Maven
-import net.apmoller.cdpipline.javaeelibs.SonarQube
-import net.apmoller.cdpipline.javaeelibs.Utility
+import net.samittutorial.ExecutionEnv
+import net.samittutorial.Maven
+import net.samittutorial.SonarQube
+import net.samittutorial.Utility
 import spock.lang.Specification
 
 class SonarQubeTest extends Specification {
@@ -173,14 +173,14 @@ class SonarQubeTest extends Specification {
         wrapper.fileExists(_) >> true
         wrapper.readFile(_) >> """
             projectKey=net.apmoller.cdpipeline:hello-world-ee
-            serverUrl=https://sonar.maerskdev.net
+            serverUrl=https://localhost:9000
             serverVersion=7.5.0.20543
-            dashboardUrl=https://sonar.maerskdev.net/dashboard?id=net.apmoller.cdpipeline%3Ahello-world-ee
+            dashboardUrl=https://localhost:9000/dashboard?id=net.apmoller.cdpipeline%3Ahello-world-ee
             ceTaskId=AXA_cc9Bo9LaNp2OCLsP
-            ceTaskUrl=https://sonar.maerskdev.net/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP
+            ceTaskUrl=https://localhost:9000/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP
         """
-        wrapper.httpRestClientV1(_, "https://sonar.maerskdev.net/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP") >> new JsonSlurper().parseText(restResponseAgainstCeTaskId)
-        wrapper.httpRestClientV1(_,"https://sonar.maerskdev.net/api/qualitygates/project_status?analysisId=AXA_cdbv-J62WRGsQWG-") >> new JsonSlurper().parseText(restResponseAgainstAnalysisId)
+        wrapper.httpRestClientV1(_, "https://localhost:9000/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP") >> new JsonSlurper().parseText(restResponseAgainstCeTaskId)
+        wrapper.httpRestClientV1(_,"https://localhost:9000/api/qualitygates/project_status?analysisId=AXA_cdbv-J62WRGsQWG-") >> new JsonSlurper().parseText(restResponseAgainstAnalysisId)
 
         when:
         sonarQube.sonarQualityGate("",0)
@@ -197,14 +197,14 @@ class SonarQubeTest extends Specification {
         wrapper.fileExists(_) >> true
         wrapper.readFile(_) >> """
             projectKey=net.apmoller.cdpipeline:hello-world-ee
-            serverUrl=https://sonar.maerskdev.net
+            serverUrl=https://localhost:9000
             serverVersion=7.5.0.20543
-            dashboardUrl=https://sonar.maerskdev.net/dashboard?id=net.apmoller.cdpipeline%3Ahello-world-ee
+            dashboardUrl=https://localhost:9000/dashboard?id=net.apmoller.cdpipeline%3Ahello-world-ee
             ceTaskId=AXA_cc9Bo9LaNp2OCLsP
-            ceTaskUrl=https://sonar.maerskdev.net/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP
+            ceTaskUrl=https://localhost:9000/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP
         """
-        wrapper.httpRestClientV1(_, "https://sonar.maerskdev.net/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP") >> new JsonSlurper().parseText(restResponseAgainstCeTaskIdPENDING)
-        wrapper.httpRestClientV1(_,"https://sonar.maerskdev.net/api/qualitygates/project_status?analysisId=AXA_cdbv-J62WRGsQWG-") >> new JsonSlurper().parseText(restResponseAgainstAnalysisId)
+        wrapper.httpRestClientV1(_, "https://localhost:9000/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP") >> new JsonSlurper().parseText(restResponseAgainstCeTaskIdPENDING)
+        wrapper.httpRestClientV1(_,"https://localhost:9000/api/qualitygates/project_status?analysisId=AXA_cdbv-J62WRGsQWG-") >> new JsonSlurper().parseText(restResponseAgainstAnalysisId)
 
         when:
         sonarQube.sonarQualityGate("",0)
@@ -221,14 +221,14 @@ class SonarQubeTest extends Specification {
         wrapper.fileExists(_) >> true
         wrapper.readFile(_) >> """
             projectKey=net.apmoller.cdpipeline:hello-world-ee
-            serverUrl=https://sonar.maerskdev.net
+            serverUrl=https://localhost:9000
             serverVersion=7.5.0.20543
-            dashboardUrl=https://sonar.maerskdev.net/dashboard?id=net.apmoller.cdpipeline%3Ahello-world-ee
+            dashboardUrl=https://localhost:9000/dashboard?id=net.apmoller.cdpipeline%3Ahello-world-ee
             ceTaskId=AXA_cc9Bo9LaNp2OCLsP
-            ceTaskUrl=https://sonar.maerskdev.net/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP
+            ceTaskUrl=https://localhost:9000/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP
         """
-        wrapper.httpRestClientV1(_, "https://sonar.maerskdev.net/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP") >> new JsonSlurper().parseText(restResponseAgainstCeTaskId)
-        wrapper.httpRestClientV1(_,"https://sonar.maerskdev.net/api/qualitygates/project_status?analysisId=AXA_cdbv-J62WRGsQWG-") >> { throw new Exception("ouch") }
+        wrapper.httpRestClientV1(_, "https://localhost:9000/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP") >> new JsonSlurper().parseText(restResponseAgainstCeTaskId)
+        wrapper.httpRestClientV1(_,"https://localhost:9000/api/qualitygates/project_status?analysisId=AXA_cdbv-J62WRGsQWG-") >> { throw new Exception("ouch") }
 
         when:
         sonarQube.sonarQualityGate("",0)
@@ -245,14 +245,14 @@ class SonarQubeTest extends Specification {
         wrapper.fileExists(_) >> true
         wrapper.readFile(_) >> """
             projectKey=net.apmoller.cdpipeline:hello-world-ee
-            serverUrl=https://sonar.maerskdev.net
+            serverUrl=https://localhost:9000
             serverVersion=7.5.0.20543
-            dashboardUrl=https://sonar.maerskdev.net/dashboard?id=net.apmoller.cdpipeline%3Ahello-world-ee
+            dashboardUrl=https://localhost:9000/dashboard?id=net.apmoller.cdpipeline%3Ahello-world-ee
             ceTaskId=AXA_cc9Bo9LaNp2OCLsP
-            ceTaskUrl=https://sonar.maerskdev.net/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP
+            ceTaskUrl=https://localhost:9000/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP
         """
-        wrapper.httpRestClientV1(_, "https://sonar.maerskdev.net/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP") >> new JsonSlurper().parseText(restResponseAgainstCeTaskId)
-        wrapper.httpRestClientV1(_,"https://sonar.maerskdev.net/api/qualitygates/project_status?analysisId=AXA_cdbv-J62WRGsQWG-") >> new JsonSlurper().parseText(restResponseAgainstAnalysisIdNOTOK)
+        wrapper.httpRestClientV1(_, "https://localhost:9000/api/ce/task?id=AXA_cc9Bo9LaNp2OCLsP") >> new JsonSlurper().parseText(restResponseAgainstCeTaskId)
+        wrapper.httpRestClientV1(_,"https://localhost:9000/api/qualitygates/project_status?analysisId=AXA_cdbv-J62WRGsQWG-") >> new JsonSlurper().parseText(restResponseAgainstAnalysisIdNOTOK)
 
         when:
         sonarQube.sonarQualityGate("",0)
