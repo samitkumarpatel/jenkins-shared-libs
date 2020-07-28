@@ -79,7 +79,7 @@ def call(body={}) {
             stage('tag/commit') {
 
                 branchName = _checkout?.GIT_BRANCH?.split("origin/")[1]
-                git.commitChanges(branchName,"package.json", "package.json change from pipeline - ${version}")
+                sh "git push orihin HEAD:${branchName}"
                 git.tag(branchName,version)
             }
         } catch(Exception e) {
