@@ -1,27 +1,19 @@
 package net.samittutorial
 class Math implements Serializable {
-    def pipeline
-    
-    Math(def pipeline){
-        this.pipeline = pipeline
-    }
+    static def pipeline
 
-    Math() {
-
-    }
-
-    def addAndWriteTheResultToAFile(int x, int y) {
+    static def addAndWriteTheResultToAFile(int x, int y) {
         pipeline.sh """
             echo ${x + y} > ${pipeline.env.WORKSPACE}/result.txt
             cat ${pipeline.env.WORKSPACE}/result.txt
         """
     }
 
-    def substract(int x, int y) {
+    static def substract(int x, int y) {
         return x - y
     }
 
-    def add(int x, int y) {
+    static def add(int x, int y) {
         return x + y
     }
 
