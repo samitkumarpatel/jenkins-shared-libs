@@ -1,8 +1,13 @@
 package net.samittutorial
 class Math implements Serializable {
     def pipeline
+    
     Math(def pipeline){
         this.pipeline = pipeline
+    }
+
+    Math() {
+
     }
 
     def addAndWriteTheResultToAFile(int x, int y) {
@@ -18,5 +23,9 @@ class Math implements Serializable {
 
     def add(int x, int y) {
         return x + y
+    }
+
+    static def info() {
+        echo "Hello from Math class"
     }
 }
