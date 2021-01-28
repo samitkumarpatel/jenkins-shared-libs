@@ -26,6 +26,6 @@ class Math implements Serializable {
     }
 
     static def info() {
-        echo "Hello from Math class"
+        println "Hello from Math class"
     }
 }
