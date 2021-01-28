@@ -3,8 +3,8 @@ class Math implements Serializable {
 
     static def writeAndDisplayContent(int x, int y) {
         sh """
-            echo ${x + y} > ${env.WORKSPACE}/result.txt
-            cat ${env.WORKSPACE}/result.txt
+            echo $WORKSPACE/result.txt
+            cat $WORKSPACE/result.txt
         """
     }
 
