@@ -8,7 +8,7 @@ class Math implements Serializable {
 
     }
     def writeAndDisplayContent(int x, int y) {
-        sh """
+        pipeline.sh """
             echo ${x+y} > ${pipeline.env.WORKSPACE}/result.txt
             cat ${pipeline.env.WORKSPACE}/result.txt
         """
