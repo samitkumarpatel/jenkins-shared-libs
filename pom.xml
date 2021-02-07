@@ -7,8 +7,8 @@
     <version>1.0-SNAPSHOT</version>
     <name>pipeline-javaee-libs</name>
     <properties>
-        <sourceVersion>1.8</sourceVersion>
-        <targetVersion>1.8</targetVersion>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
