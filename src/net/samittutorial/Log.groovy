@@ -11,7 +11,4 @@ class Log {
     def debug(message) {
         steps.echo "DEBUG: ${message}"
     }
-    static def h(){
-        echo "Hello from h static method"
-    }
 }
