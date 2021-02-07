@@ -1,5 +1,5 @@
 import net.samittutorial.*
-
+import static net.samittutorial.ClassInClass.InnerClass
 def call() {
     def classInClass = new ClassInClass()
     println(
