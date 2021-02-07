@@ -1,10 +1,10 @@
 import net.samittutorial.*
-import static net.samittutorial.ClassInClass.InnerClass
+import static net.samittutorial.ClassInClass.*
 def call() {
     def classInClass = new ClassInClass()
     println(
             classInClass.show(
-                    new ClassInClass.InnerClass(id: 1, name: "FROM DSL")
+                    InnerClass(id: 1, name: "FROM DSL")
             )
     )
 
