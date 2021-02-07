@@ -4,7 +4,7 @@ def call() {
     def classInClass = new ClassInClass()
     println(
             classInClass.show(
-                    new ClassInClass.InnerClass(id: 1, name: "FROM DSL")
+                    new net.samittutorial.ClassInClass.InnerClass(id: 1, name: "FROM DSL")
             )
     )
 
