@@ -15,7 +15,7 @@ def call(body={}) {
                 when {
                     anyOf {
                         equals expected: true, actual: pipelineParams.isEmpty();
-                        equals expected: true, actual: pipelineParams.skipUnitest
+                        equals expected: false, actual: pipelineParams.skipUnitest
                     }  
                 }
                 steps {
