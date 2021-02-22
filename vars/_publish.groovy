@@ -13,7 +13,7 @@ def call(body={}) {
             }
             stage('unitest') {
                 when { 
-                    equals expected: false, actual: pipelineParams.skipUnitest 
+                    equals expected: true, actual: pipelineParams.skipUnitest 
                 }
                 steps {
                     echo "UNITEST"
